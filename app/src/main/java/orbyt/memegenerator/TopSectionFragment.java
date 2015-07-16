@@ -10,6 +10,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 /**
  * Created by orbyt on 7/14/2015.
  */
@@ -35,22 +38,24 @@ public class TopSectionFragment extends Fragment {
     }
 
     //Bind the components to variables
-//    @Bind(R.id.topTextInput) EditText topTextInput;
-//    @Bind(R.id.bottomTextInput) EditText bottomTextInput;
-//    @Bind(R.id.button) Button button;
+    @Bind(R.id.topTextInput) EditText topTextInput;
+    @Bind(R.id.bottomTextInput) EditText bottomTextInput;
+    @Bind(R.id.button) Button button;
 
-    EditText topTextInput;
-    EditText bottomTextInput;
-    Button button;
+//    EditText topTextInput;
+//    EditText bottomTextInput;
+//    Button button;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.top_section_fragment, container, false);
 
-        topTextInput = (EditText) view.findViewById(R.id.topTextInput);
-        bottomTextInput = (EditText) view.findViewById(R.id.bottomTextInput);
-        button = (Button) view.findViewById(R.id.button);
+        ButterKnife.bind(this, view);
+
+//        topTextInput = (EditText) view.findViewById(R.id.topTextInput);
+//        bottomTextInput = (EditText) view.findViewById(R.id.bottomTextInput);
+//        button = (Button) view.findViewById(R.id.button);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
