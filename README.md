@@ -1,2 +1,2 @@
 # Meme-Generator
-A simple meme generator. Images are currently static.
+A simple meme generator. Images are currently static
