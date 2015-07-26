@@ -8,21 +8,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 /**
  * Created by orbyt on 7/14/2015.
  */
 public class BottomPictureFragment extends Fragment {
 
-    TextView topText;
-    TextView bottomText;
-
+    @Bind(R.id.topText) TextView topText;
+    @Bind(R.id.bottomText) TextView bottomText;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.bottom_picture_fragment, container, false);
-        topText = (TextView) view.findViewById(R.id.topText);
-        bottomText = (TextView) view.findViewById(R.id.bottomText);
+        ButterKnife.bind(this, view);
         return view;
     }
 
